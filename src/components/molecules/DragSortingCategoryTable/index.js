@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { Empty } from "antd";
+import React, { useState, useEffect } from 'react';
+import { Empty } from 'antd';
 
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-import { withStyles } from "@material-ui/core/styles";
-import RootRef from "@material-ui/core/RootRef";
-import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
-import Table from "@material-ui/core/Table";
-import TableHead from "@material-ui/core/TableHead";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableRow from "@material-ui/core/TableRow";
+import { withStyles } from '@material-ui/core/styles';
+import RootRef from '@material-ui/core/RootRef';
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
+import Table from '@material-ui/core/Table';
+import TableHead from '@material-ui/core/TableHead';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
 
-import confirm from "../../../utils/confirmDialog";
+import confirm from '../../../utils/confirmDialog';
 
 const AddNewCategory = props => {
   const { items, classes } = props;
@@ -46,15 +46,15 @@ const AddNewCategory = props => {
   };
 
   const handleDeleteRow = () => {
-    confirm("Are you sure").then(
+    confirm('Are you sure').then(
       result => {
         // `proceed` callback
-        console.log("proceed called");
+        console.log('proceed called');
         console.log(result);
       },
       result => {
         // `cancel` callback
-        console.log("cancel called");
+        console.log('cancel called');
         console.log(result);
       }
     );
@@ -99,18 +99,18 @@ const AddNewCategory = props => {
                         >
                           <TableCell
                             {...provided.dragHandleProps}
-                            style={{ width: "10%" }}
+                            style={{ width: '10%' }}
                           >
                             ::
                           </TableCell>
                           <TableCell
                             component="th"
                             scope="row"
-                            style={{ width: "70%" }}
+                            style={{ width: '70%' }}
                           >
                             {row.content}
                           </TableCell>
-                          <TableCell align="right" style={{ width: "20%" }}>
+                          <TableCell align="right" style={{ width: '20%' }}>
                             <IconButton
                               aria-label="Delete"
                               onClick={() => handleDeleteRow()}
@@ -135,24 +135,24 @@ const AddNewCategory = props => {
 
 const styles = theme => ({
   root: {
-    marginBottom: "50px"
+    marginBottom: '50px'
   },
   head: {
     backgroundColor: theme.palette.common.black,
-    "&>tr>th": {
+    '&>tr>th': {
       color: theme.palette.common.white
     }
   },
   row: {
-    cursor: "pointer",
-    "&:nth-of-type(odd)": {
+    cursor: 'pointer',
+    '&:nth-of-type(odd)': {
       backgroundColor: theme.palette.background.default
     },
-    "&:hover": {
+    '&:hover': {
       backgroundColor: theme.palette.grey[300]
     },
-    "&>th, &>td": {
-      padding: "2px 40px 2px 16px"
+    '&>th, &>td': {
+      padding: '2px 40px 2px 16px'
     }
   }
 });

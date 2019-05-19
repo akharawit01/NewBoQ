@@ -1,7 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-import { Icon } from "antd";
+import { Icon } from 'antd';
 
 const asideLeftNav = () => {
   return (
