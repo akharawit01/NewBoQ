@@ -25,6 +25,18 @@ const BarStyle = styled.div`
       font-size: 10px;
     }
   }
+
+  .actions-bar {
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+    & > div {
+      border-left: 1px solid ${props => props.theme.COLOR.DAVY_GREY};
+      cursor: pointer;
+      font-size: 1.5rem;
+      padding: 17px 25px;
+    }
+  }
 `;
 
 export default BarStyle;

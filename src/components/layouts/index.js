@@ -4,11 +4,15 @@ import { Layout } from 'antd';
 import TopBar from './Topbar';
 import BelowTop from './BelowTop';
 
-const LayoutApp = props => {
+import MainRoute from './router';
+
+const LayoutApp = () => {
   return (
     <Layout className="inner">
       <TopBar />
-      <BelowTop {...props} />
+      <BelowTop>
+        <MainRoute />
+      </BelowTop>
     </Layout>
   );
 };

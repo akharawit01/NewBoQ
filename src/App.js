@@ -6,11 +6,10 @@ import { ThemeProvider } from 'styled-components';
 import { configTheam } from './config';
 import { store } from './redux/store';
 import AppStyle from './style.css';
-import Layout from './components/layouts';
 
 import theme from './shared/style/theme';
 
-import AppRoute from './router';
+import PublicRoute from './router';
 
 class App extends Component {
   render() {
@@ -20,9 +19,7 @@ class App extends Component {
           <Provider store={store}>
             <BrowserRouter>
               <AppStyle className="App">
-                <Layout>
-                  <AppRoute />
-                </Layout>
+                <PublicRoute />
               </AppStyle>
             </BrowserRouter>
           </Provider>
