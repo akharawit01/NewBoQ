@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { withStyles } from "@material-ui/core/styles";
-import { Modal } from "antd";
-import Fab from "@material-ui/core/Fab";
-import AddIcon from "@material-ui/icons/Add";
+import React, { useState } from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import { Modal } from 'antd';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
-import AddSubCategoryBoqForm from "../../../forms/AddSubCategoryBoqForm";
+import AddSubCategoryBoqForm from '../../../forms/AddSubCategoryBoqForm';
 
 const AddNewSubCategoryModal = ({ classes }) => {
   const [visible, setVisible] = useState(false);
@@ -43,10 +43,10 @@ const AddNewSubCategoryModal = ({ classes }) => {
 
 const styles = theme => ({
   fab: {
-    position: "fixed",
-    bottom: "15px",
-    right: "15px",
-    zIndex: "1"
+    position: 'fixed',
+    bottom: '15px',
+    right: '15px',
+    zIndex: '1'
   }
 });
 export default withStyles(styles)(AddNewSubCategoryModal);
