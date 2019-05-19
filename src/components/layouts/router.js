@@ -13,7 +13,7 @@ const MainRoute = ({ history }) => {
           exact
           path="/"
           component={() => {
-            return <>Dashboard</>;
+            return <>Dashboardsx Akharawit Aryakom</>;
           }}
         />
         <Route exact path="/boq" component={BoqList} />
