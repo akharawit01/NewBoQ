@@ -1,30 +1,39 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { Switch, Router, Route } from 'react-router-dom';
+import { Switch, Router, Route, Redirect } from 'react-router-dom';
 
-import BoqList from './pages/boq/BoqListing';
-import BoqDetail from './pages/boq/BoqDetail';
+import Layout from './components/layouts';
+import Login from './pages/login';
 
-const PublicRouter = ({ history }) => {
+const AppRoute = ({ history }) => {
   return (
     <Router history={history}>
       <Switch>
-        <Route
-          exact
-          path="/"
-          component={() => {
-            return <>Dashboard</>;
-          }}
-        />
-        <Route exact path="/boq" component={BoqList} />
-        <Route exact path="/boq/:id" component={BoqDetail} />
-        <Route exact path="/projects" component={page404} />
-        <Route component={page404} />
+        <Route path="/login" component={Login} />
+        <PrivateRoute path="/" component={Layout} />
       </Switch>
     </Router>
   );
 };
 
-const page404 = () => <div>Coming soon....</div>;
+function PrivateRoute({ component: Component, ...rest }) {
+  const token = localStorage.getItem('token');
+  return (
+    <Route
+      {...rest}
+      render={props =>
+        token ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/login'
+            }}
+          />
+        )
+      }
+    />
+  );
+}
 
-export default withRouter(PublicRouter);
+export default withRouter(AppRoute);
