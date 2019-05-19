@@ -15,7 +15,7 @@ const DrawerAddCategoryName = forwardRef((props, ref) => {
 
   return (
     <Drawer
-      title="Create a new BOQ"
+      title="Add another category name"
       width={720}
       onClose={onClose}
       visible={visible}
